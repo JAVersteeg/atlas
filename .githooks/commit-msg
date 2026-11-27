@@ -1,0 +1,4 @@
+#!/bin/sh
+# Rejects a commit message that breaks the CLAUDE.md rules. Enabled by `pnpm install`
+# (scripts/setup-git-hooks.mjs); `git commit --no-verify` skips it.
+exec node "$(dirname "$0")/../scripts/commit-message.mjs" "$1"
